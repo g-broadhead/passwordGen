@@ -2,7 +2,7 @@ const lowerList = 'abcdefghijklmnopqrstuvwxyz';
 const numList = '1234567890';
 const specialList = `!@#$%^&*()[]{};':",.<>/?`;
 
-var upperAlpha =[];
+var upperAlpha ='';
 
 let userChoices = "";
 
