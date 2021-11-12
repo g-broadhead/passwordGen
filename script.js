@@ -6,9 +6,6 @@ var upperAlpha ='';
 
 let userChoices = "";
 
-function toUpper(x) {
-  return x.toUpperCase();
-}
 upperList = lowerList.toUpperCase()
 
 
@@ -33,7 +30,7 @@ document.getElementById('generate').addEventListener('click', () => {
     userChoices = confirm("You must select a criteria!");
   }
   else if (confirmUpper && confirmLower && confirmNum && confirmSpecial) {
-    userChoices = lowerList.concat(upperList, specialList, numList);
+    userChoices = numList.concat(specialList, upperList, lowerList);
   }
   else if (confirmUpper && confirmNum && confirmSpecial) {
     userChoices = specialList.concat(upperList, numList);
