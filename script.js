@@ -18,25 +18,22 @@ document.getElementById('generate').addEventListener('click', () => {
     }
   }
 
-  let confirmUpper = confirm('Do you want capital letters? Yes = Ok No = Cancel');
-
-  let confirmLower = confirm('Do you want lower case letters? Yes = Ok No = Cancel');
-
-  let confirmNum = confirm('Do you want numbers? Yes = Ok No = Cancel');
-
-  let confirmSpecial = confirm('Do you want special characters? Yes = Ok No = Cancel');
+  let confirmUpper = confirm('Do you want capital letters?');
+  let confirmLower = confirm('Do you want lower case letters?');
+  let confirmNum = confirm('Do you want numbers?');
+  let confirmSpecial = confirm('Do you want special characters?');
 
   if (!confirmUpper && !confirmLower && !confirmNum && !confirmSpecial) {
-    userChoices = confirm("You must select a criteria!");
+    userChoices = alert("You must select a criteria!");
   }
   else if (confirmUpper && confirmLower && confirmNum && confirmSpecial) {
     userChoices = numList.concat(specialList, upperList, lowerList);
   }
   else if (confirmUpper && confirmNum && confirmSpecial) {
-    userChoices = specialList.concat(upperList, numList);
+    userChoices = numList.concat(upperList, specialList);
   }
   else if (confirmLower && confirmNum && confirmSpecial) {
-    userChoices = specialList.concat(lowerList, numList);
+    userChoices = numList.concat(lowerList, numList, specialList);
   }
   else if (confirmUpper && confirmLower && confirmSpecial) {
     userChoices = specialList.concat(upperList, lowerList);
@@ -87,8 +84,6 @@ document.getElementById('generate').addEventListener('click', () => {
   var ps = password.join("");
   UserInput(ps);
   return ps;
-  
-
 })
 
 
